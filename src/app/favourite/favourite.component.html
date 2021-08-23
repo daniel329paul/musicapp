@@ -1,0 +1,23 @@
+<div class="songlist_wrapper" *ngFor="let song of songs">
+    <div class="songitem" data-id="{{song.id}}">
+        <div class="sileft">
+            <img src="{{song.thumbnailUrl}}" width="45px" height="45px">
+        </div>
+        <div class="simiddle">
+            <div class="layer_1">
+                <div class="sititle">{{song.title}}</div>
+                <div class="sisinger"> Singer</div>
+                <div class="sialbum"> {{getAlbumtitle(song.albumId)}}</div>
+            </div>
+            <div class="layer_2">
+                4:20
+            </div>
+            
+        </div>
+        <div class="siright">
+            <button class="button_heart">    
+                <mat-icon (click)="isFavourite(song.id)? removeFavourite(song.id): addFavourite(song.id)" aria-hidden="false" aria-label="Example isFavourite(song.id)?'favorite':'favorite_border' icon"> {{isFavourite(song.id)?"favorite":"favorite_border"}} </mat-icon>       
+            </button>
+        </div>
+    </div>
+</div> 
